@@ -14,6 +14,8 @@ public class CheckOutPage extends HelperData {
     SelenideElement finishBtn = $(By.xpath("//button[@id='finish']"));
     SelenideElement cancelBtn = $(By.xpath("//button[@id='cancel']"));
     SelenideElement completeMessage = $(By.xpath("//h2[contains(text(),'THANK YOU FOR YOUR ORDER')]"));
+    SelenideElement itemTotal = $(By.xpath("//div[@class='summary_subtotal_label']"));
+
 
 
     public void clickContinueBtn(){
@@ -32,7 +34,12 @@ public class CheckOutPage extends HelperData {
     }
     public void fillInformationForm(){fillInformationForm(new InformationFormData(
             "FirstName","LastName","1234"));
+    }
 
+    public double getItemTotal(){
+        String stringPrice = itemTotal.getText().replace("Item total: $", "");
+        Double doublePrice=Double.parseDouble(stringPrice);
+        return doublePrice;
     }
 
     public SelenideElement getCompleteMessage() {

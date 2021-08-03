@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import projectData.HelperData;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 
 public class ProductsPage extends HelperData {
@@ -16,8 +17,14 @@ public class ProductsPage extends HelperData {
     SelenideElement bikeLightRemoveBtn = $(By.xpath("//button[@id='remove-sauce-labs-bike-light']"));
     SelenideElement cartBadgeContainer = $(By.xpath("//span[contains(text(),'')]"));
     SelenideElement cartLink = $(By.xpath("//a[@class='shopping_cart_link']"));
+    ElementsCollection productList = $$(By.xpath("//div[@class='inventory_item']"));
+    SelenideElement addToCartBtn = $(By.xpath("//button[text()='Add to cart']"));
 
 
+    public void selectProduct(){
+
+//        productList.last(number).$(By.xpath("//button[text()='Add to cart']")).click();
+    }
 
     public void addToCart(SelenideElement locator){
     clickOn(locator);
@@ -53,5 +60,15 @@ public class ProductsPage extends HelperData {
         return bikeLightRemoveBtn;
     }
 
+    public SelenideElement getCartLink() {
+        return cartLink;
+    }
 
+    public ElementsCollection getProductList() {
+        return productList;
+    }
+
+    public SelenideElement getAddToCartBtn() {
+        return addToCartBtn;
+    }
 }
