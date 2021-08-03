@@ -1,4 +1,4 @@
-package projectData.pages;
+package pages.cartPage;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
@@ -15,7 +15,7 @@ public class CartPage extends HelperData {
     SelenideElement checkOutBtn = $(By.xpath("//button[@id='checkout']"));
     ElementsCollection cartList = $$(By.xpath("//div[@class='cart_item']"));
     ElementsCollection priceList = $$(By.xpath("//div[@class='inventory_item_price']"));
-    SelenideElement removeBtn = $(By.xpath("//button[text()='Remove']"));
+    SelenideElement removeBtn = $(By.xpath(".//button[text()='Remove']"));
 
     public Double getPrices() {
         List<Double> prices = priceList.stream()
@@ -39,9 +39,6 @@ public class CartPage extends HelperData {
         clickOn(removeBtn);
     }
 
-    public SelenideElement getRemoveBtn() {
-        return removeBtn;
-    }
 
 }
 /*пример*/

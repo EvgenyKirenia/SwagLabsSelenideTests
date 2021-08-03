@@ -1,4 +1,4 @@
-package projectData.pages;
+package pages.checkPage;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
@@ -16,29 +16,32 @@ public class CheckOutPage extends HelperData {
     SelenideElement completeMessage = $(By.xpath("//h2[contains(text(),'THANK YOU FOR YOUR ORDER')]"));
     SelenideElement itemTotal = $(By.xpath("//div[@class='summary_subtotal_label']"));
 
-
-
-    public void clickContinueBtn(){
+    public void clickContinueBtn() {
         clickOn(continueBtn);
     }
-    public void clickFinishBtn(){
+
+    public void clickFinishBtn() {
         clickOn(finishBtn);
     }
-    public void clickCancelBtn(){
+
+    public void clickCancelBtn() {
         clickOn(cancelBtn);
     }
-    public void fillInformationForm(InformationFormData informationFormData){
-        inputToField(firstNameField,informationFormData.getFirstName());
-        inputToField(lastNameField,informationFormData.getLastName());
-        inputToField(postalCodeField,informationFormData.getPostalCode());
-    }
-    public void fillInformationForm(){fillInformationForm(new InformationFormData(
-            "FirstName","LastName","1234"));
+
+    public void fillInformationForm(InformationFormData informationFormData) {
+        inputToField(firstNameField, informationFormData.getFirstName());
+        inputToField(lastNameField, informationFormData.getLastName());
+        inputToField(postalCodeField, informationFormData.getPostalCode());
     }
 
-    public double getItemTotal(){
+    public void fillInformationForm() {
+        fillInformationForm(new InformationFormData(
+                "FirstName", "LastName", "1234"));
+    }
+
+    public double getItemTotal() {
         String stringPrice = itemTotal.getText().replace("Item total: $", "");
-        Double doublePrice=Double.parseDouble(stringPrice);
+        Double doublePrice = Double.parseDouble(stringPrice);
         return doublePrice;
     }
 
@@ -46,12 +49,10 @@ public class CheckOutPage extends HelperData {
         return completeMessage;
     }
 
-
-
     public static class InformationFormData {
-private final String firstName;
-private final String lastName;
-private final String postalCode;
+        private final String firstName;
+        private final String lastName;
+        private final String postalCode;
 
         public InformationFormData(String FirstName, String LastName, String PostalCode) {
             this.firstName = FirstName;

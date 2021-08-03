@@ -6,12 +6,14 @@ import projectData.ProjectData;
 
 public class TestData {
     protected ProjectData projectData = new ProjectData();
+
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
         projectData.openBrowser();
     }
+
     @AfterEach
-    public void tearDown(){
+    public void tearDown() {
         projectData.closeBrowser();
     }
 }
