@@ -34,5 +34,7 @@ public class ProductsPage extends HelperData {
         clickOn(productList.getByIndex(i).getRemoveFromCartBtn());
     }
 
-
+    public int getSizeProductList() {
+        return productList.items.size();
+    }
 }

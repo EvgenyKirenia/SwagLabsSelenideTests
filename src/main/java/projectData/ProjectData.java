@@ -15,10 +15,10 @@ public class ProjectData {
     private final ProductsPage productsPage = new ProductsPage();
     private final CartPage cartPage = new CartPage();
     private final CheckOutPage checkOutPage = new CheckOutPage();
-
+    private static final String URL = "https://www.saucedemo.com";
     public void openBrowser() {
 
-        open(Configuration.baseUrl = "https://www.saucedemo.com/");
+         open(URL);
         Configuration.startMaximized = true;
 
     }
@@ -35,12 +35,14 @@ public class ProjectData {
         return productsPage;
     }
 
-    public CartPage getCartPage() {
-        return cartPage;
-    }
+    public CartPage getCartPage() {return cartPage; }
 
     public CheckOutPage getCheckOutPage() {
         return checkOutPage;
+    }
+
+    public static String getURL() {
+        return URL;
     }
 }
 
