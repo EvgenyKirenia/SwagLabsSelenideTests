@@ -8,10 +8,10 @@ import static com.codeborne.selenide.Selenide.$;
 
 
 public class LogInPage extends HelperData {
-   private static final SelenideElement usernameField = $("#user-name");
-   private static final SelenideElement passwordField = $("#password");
-   private static final SelenideElement logInBtn = $(By.xpath("//input[@id='login-button']"));
-   private static final SelenideElement loginForm = $(By.xpath("//div[@class='login-box']"));
+    private static final SelenideElement usernameField = $("#user-name");
+    private static final SelenideElement passwordField = $("#password");
+    private static final SelenideElement logInBtn = $(By.xpath("//input[@id='login-button']"));
+    private static final SelenideElement loginForm = $(By.xpath("//div[@class='login-box']"));
 
 
     public void logInMethod() {
