@@ -27,7 +27,7 @@ public class CartPage extends HelperData {
         return sumPrices;
     }
 
-@Step("jjj")
+
 
     public void clickCheckOutBtn() {
         clickOn(checkOutBtn);
