@@ -1,10 +1,9 @@
 package tests;
 
-import io.qameta.allure.Attachment;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+
 import testData.TestData;
 
 public class LoginTest extends TestData {

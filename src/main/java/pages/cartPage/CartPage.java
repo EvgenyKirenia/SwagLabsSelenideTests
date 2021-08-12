@@ -2,7 +2,7 @@ package pages.cartPage;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Step;
+
 import org.openqa.selenium.By;
 import projectData.HelperData;
 
